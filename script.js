@@ -68,7 +68,7 @@ stage.on("pointerdown", function () {
   n++;
   vs += `{${x},${500 - y}},`;
   setStr();
-  writeMessage(str);
+  // writeMessage(str);
 });
 // add the shape to the layer
 layer.add(bg);
