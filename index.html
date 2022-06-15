@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        height: 500px;
+        width: 500px;
+        background-color: white;
+      }
+      body {
+        background-color: gray;
+        display: grid;
+        place-items: center;
+        place-content: center;
+        min-height: 100vh;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        border-radius: 10px;
+        border: none;
+        font-size: 1.2rem;
+        box-shadow: 0 5px 5px -5px #333;
+        cursor: pointer;
+      }
+      .modalbtn {
+        background-color: #b1a9d4;
+        border-radius: 5px;
+        padding: 15px 30px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .closebtn {
+        float: right;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .closebtn:hover {
+        cursor: pointer;
+      }
+      .modal {
+        display: none;
+      }
+      .modalcontent {
+        position: relative;
+        font-size: 15px;
+        padding: 15px;
+        background-color: #dedaf7;
+        width: 40%;
+        text-align: center;
+        margin: 2%;
+      }
+    </style>
+    <link rel="stylesheet" href="./micromodal.css" />
+    <script src="https://unpkg.com/konva@8/konva.min.js" defer></script>
+    <script
+      src="https://unpkg.com/micromodal/dist/micromodal.min.js"
+      defer
+    ></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <button id="modal_btn" data-micromodal-trigger="modal-1" class="modalbtn">
+      Export
+    </button>
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div
+          class="modal__container"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-1-title"
+        >
+          <header class="modal__header">
+            <h2 class="modal__title" id="modal-1-title">
+              Export Mesh: copy from below
+            </h2>
+            <button
+              class="modal__close"
+              aria-label="Close modal"
+              data-micromodal-close
+            ></button>
+          </header>
+          <div class="modal__footer">
+            <button class="modal__btn modal__btn-primary" id="copy">
+              Copy
+            </button>
+            <button
+              class="modal__btn"
+              data-micromodal-close
+              aria-label="Close this dialog window"
+            >
+              Close
+            </button>
+          </div>
+          <main class="modal__content" id="modal-1-content">
+            <p id="mod"></p>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
