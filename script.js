@@ -48,9 +48,9 @@ var redLine = new Konva.Line({
   lineJoin: "round",
 });
 
-function writeMessage(message) {
-  console.log(message);
-}
+// function writeMessage(message) {
+//   console.log(message);
+// }
 stage.on("pointermove", function () {
   var pointerPos = stage.getPointerPosition();
   let x = pointerPos.x;
